@@ -1,0 +1,42 @@
+/* Filament Admin theme overrides */
+
+/* Brand color tweaks (keeps primary Amber but can be adjusted) */
+/* Example: Override primary shade:
+:root { --filament-color-primary-600: #f59e0b; }
+*/
+
+/* Auth (login) page enhancements */
+.fi-auth-layout {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(251, 191, 36, 0.25), transparent 70%),
+              radial-gradient(1000px 500px at 110% 10%, rgba(59, 130, 246, 0.15), transparent 70%),
+              linear-gradient(180deg, #0f172a 0%, #111827 35%, #0b1220 100%);
+}
+
+.fi-auth-card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  backdrop-filter: blur(6px);
+}
+
+/* Subtle glow on primary buttons */
+.fi-btn.fi-color-primary {
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  animation: filament-pulse 2.5s infinite;
+}
+
+@keyframes filament-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.45); }
+  70% { box-shadow: 0 0 0 14px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+/* Input styling tweaks */
+.fi-input, .fi-select, .fi-textarea {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Card header branding */
+.fi-auth-card .fi-card-header {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}

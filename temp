@@ -1,0 +1,31 @@
+Seed the faker data:
+
+php artisan db:seed --class=FakerContentSeeder
+
+
+composer require filament/filament
+php artisan filament:install
+php artisan make:filament-user
+
+php artisan make:filament-resource Post --generate
+php artisan make:filament-resource Comment --generate
+php artisan make:filament-resource User --generate
+
+Admin (full access)
+
+Email: admin@example.com
+Password: password
+Authors (panel access, limited permissions)
+
+Email: alice@author.test
+Password: password
+Email: bob@author.test
+Password: password
+Regular users (no panel access, can read posts & comment)
+
+Email: charlie@site.test
+Password: password
+Email: dana@site.test
+Password: password
+Email: test@example.com
+Password: password

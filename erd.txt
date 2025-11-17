@@ -1,0 +1,149 @@
+digraph "G" {
+style="filled"
+bgcolor="#F7F7F7"
+fontsize="12"
+labelloc="t"
+concentrate="1"
+splines="polyline"
+overlap=""
+nodesep="1"
+rankdir="LR"
+pad="0.5"
+ranksep="2"
+esep="1"
+fontname="Helvetica Neue"
+appmodelscomment:post_id -> appmodelspost:id [
+label=" "
+xlabel="BelongsTo
+post"
+color="#F77F00"
+penwidth="1.8"
+fontname="Helvetica Neue"
+dir="both"
+arrowhead="tee"
+arrowtail="crow"
+]
+appmodelscomment:user_id -> appmodelsuser:id [
+label=" "
+xlabel="BelongsTo
+user"
+color="#F77F00"
+penwidth="1.8"
+fontname="Helvetica Neue"
+dir="both"
+arrowhead="tee"
+arrowtail="crow"
+]
+appmodelscomment:author_id -> appmodelsuser:id [
+label=" "
+xlabel="BelongsTo
+author"
+color="#F77F00"
+penwidth="1.8"
+fontname="Helvetica Neue"
+dir="both"
+arrowhead="tee"
+arrowtail="crow"
+]
+appmodelspost:user_id -> appmodelsuser:id [
+label=" "
+xlabel="BelongsTo
+author"
+color="#F77F00"
+penwidth="1.8"
+fontname="Helvetica Neue"
+dir="both"
+arrowhead="tee"
+arrowtail="crow"
+]
+appmodelspost:id -> appmodelscomment:post_id [
+label=" "
+xlabel="HasMany
+comments"
+color="#FCBF49"
+penwidth="1.8"
+fontname="Helvetica Neue"
+dir="both"
+arrowhead="crow"
+arrowtail="none"
+]
+appmodelsuser:id -> appmodelspost:user_id [
+label=" "
+xlabel="HasMany
+posts"
+color="#FCBF49"
+penwidth="1.8"
+fontname="Helvetica Neue"
+dir="both"
+arrowhead="crow"
+arrowtail="none"
+]
+appmodelsuser:id -> appmodelscomment:user_id [
+label=" "
+xlabel="HasMany
+comments"
+color="#FCBF49"
+penwidth="1.8"
+fontname="Helvetica Neue"
+dir="both"
+arrowhead="crow"
+arrowtail="none"
+]
+"appmodelscomment" [
+label=<<table width="100%" height="100%" border="0" margin="0" cellborder="1" cellspacing="0" cellpadding="10">
+<tr width="100%"><td width="100%" bgcolor="#d3d3d3"><font color="#333333">Comment</font></td></tr>
+<tr width="100%"><td port="id" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >id (int8)</font></td></tr>
+<tr width="100%"><td port="post_id" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >post_id (int8)</font></td></tr>
+<tr width="100%"><td port="user_id" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >user_id (int8)</font></td></tr>
+<tr width="100%"><td port="author_id" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >author_id (int8)</font></td></tr>
+<tr width="100%"><td port="content" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >content (text)</font></td></tr>
+<tr width="100%"><td port="created_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >created_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="updated_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >updated_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="deleted_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >deleted_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="created_by" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >created_by (varchar)</font></td></tr>
+<tr width="100%"><td port="updated_by" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >updated_by (varchar)</font></td></tr>
+</table>>
+margin="0"
+shape="rectangle"
+fontname="Helvetica Neue"
+]
+"appmodelspost" [
+label=<<table width="100%" height="100%" border="0" margin="0" cellborder="1" cellspacing="0" cellpadding="10">
+<tr width="100%"><td width="100%" bgcolor="#d3d3d3"><font color="#333333">Post</font></td></tr>
+<tr width="100%"><td port="id" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >id (int8)</font></td></tr>
+<tr width="100%"><td port="user_id" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >user_id (int8)</font></td></tr>
+<tr width="100%"><td port="title" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >title (text)</font></td></tr>
+<tr width="100%"><td port="content" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >content (text)</font></td></tr>
+<tr width="100%"><td port="status" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >status (varchar)</font></td></tr>
+<tr width="100%"><td port="created_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >created_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="updated_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >updated_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="deleted_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >deleted_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="created_by" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >created_by (varchar)</font></td></tr>
+<tr width="100%"><td port="updated_by" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >updated_by (varchar)</font></td></tr>
+</table>>
+margin="0"
+shape="rectangle"
+fontname="Helvetica Neue"
+]
+"appmodelsuser" [
+label=<<table width="100%" height="100%" border="0" margin="0" cellborder="1" cellspacing="0" cellpadding="10">
+<tr width="100%"><td width="100%" bgcolor="#d3d3d3"><font color="#333333">User</font></td></tr>
+<tr width="100%"><td port="id" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >id (int8)</font></td></tr>
+<tr width="100%"><td port="name" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >name (varchar)</font></td></tr>
+<tr width="100%"><td port="email" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >email (varchar)</font></td></tr>
+<tr width="100%"><td port="email_verified_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >email_verified_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="password" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >password (text)</font></td></tr>
+<tr width="100%"><td port="remember_token" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >remember_token (varchar)</font></td></tr>
+<tr width="100%"><td port="is_author" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >is_author (bool)</font></td></tr>
+<tr width="100%"><td port="mobile" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >mobile (varchar)</font></td></tr>
+<tr width="100%"><td port="created_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >created_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="updated_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >updated_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="deleted_at" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >deleted_at (timestamp)</font></td></tr>
+<tr width="100%"><td port="created_by" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >created_by (varchar)</font></td></tr>
+<tr width="100%"><td port="updated_by" align="left" width="100%"  bgcolor="#ffffff"><font color="#333333" >updated_by (varchar)</font></td></tr>
+</table>>
+margin="0"
+shape="rectangle"
+fontname="Helvetica Neue"
+]
+}
