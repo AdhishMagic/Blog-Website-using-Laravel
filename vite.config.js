@@ -9,9 +9,13 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/css/filament/admin/theme.css',
+                'vendor/andreia/filament-nord-theme/resources/css/theme.css',
             ],
             refresh: true,
         }),
         tailwindcss(),
     ],
+    server: {
+        host: '0.0.0.0',
+    },
 });

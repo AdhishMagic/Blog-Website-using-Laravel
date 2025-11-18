@@ -7,6 +7,54 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About This Project
+
+This is a professional Laravel application with Filament admin panel featuring:
+
+- **Enhanced Dashboard**: Professional stats overview with trends and mini-charts
+- **Trending Posts**: Real-time tracking of most engaging content
+- **Recent Activity Timeline**: Live feed of all platform activities
+- **Top Contributors**: Leaderboard of most active users
+- **Nord Theme**: Beautiful Arctic-inspired light/dark theme
+- **Google Gemini AI Integration**: Content generation and moderation capabilities
+
+## Dashboard Features
+
+### 📊 Stats Overview
+- Total Posts, Users, Comments with trend indicators
+- Active Users (30-day rolling window)
+- Average engagement metrics
+- Weekly activity summary
+- Mini sparkline charts for each metric
+
+### 🔥 Trending Posts
+Shows top 10 posts by comment count in the last 30 days with:
+- Author information
+- Comment counts
+- Publication dates
+- Quick view links
+
+### 💬 Recent Comments
+Latest 10 comments across all posts displaying:
+- Comment content preview
+- Associated post
+- Author details
+- Timestamp
+
+### ⭐ Top Contributors
+Leaderboard of most active users showing:
+- Post counts (30 days)
+- Comment counts (30 days)
+- Total activity score
+- Join date
+
+### 📊 Activity Timeline
+Live feed combining:
+- New posts created
+- Comments submitted
+- Users joined
+- Sorted chronologically with color-coded icons
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -81,7 +129,11 @@ This project includes a Filament v3 admin panel registered via `App\Providers\Fi
 	```bash
 	php artisan serve
 	```
-4. Visit: `http://localhost:8000/admin` and log in with a seeded or created user.
+4. (Optional during development) Run the Vite dev server in a separate terminal so Filament can stream assets without requiring a fresh build:
+	```bash
+	npm run dev -- --host
+	```
+5. Visit: `http://localhost:8000/admin` and log in with a seeded or created user.
 
 ### Customization Pointers
 - Add new resources under `app/Filament/Resources`.
